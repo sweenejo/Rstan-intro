@@ -118,7 +118,7 @@ turt_dat2 <- turt_dat %>%
   mutate(sets = c(88, 1604, 939, 711 + 656 + 128, 1487, 1833, 1879, 1579, 1307, 912, 1349, 1178, 778, 973))
 ```
 
-We can now respecify the model to estimate lambda as an interaction rate parameter. We'll change the generate quantities block to look at the posterior predctions conditional on a year containing 2000 sets.
+We can now respecify the model to estimate lambda as an interaction rate parameter. We'll change the generate quantities block to look at the posterior predictions for 2017, when 973 sets were used.
 
 $$p(\lambda|y, sets)\propto Poisson(y|\lambda \times sets)p(\lambda)$$
 
@@ -141,6 +141,8 @@ poisson_est2 <- stan("poisson_model2.stan",
 ```{r}
 print(poisson_est2)
 ```
+
+Wow! The model predicts 8 turtle interactions and we observed 21.  What does this tell us?
 
 # Deciding the amount of Observer coverage
 

@@ -23,5 +23,6 @@ model {
 }
 generated quantities {
 int turt_pred;
-turt_pred = poisson_rng(lambda * 2000);
+//turt_pred = poisson_rng(lambda * 2000);
+turt_pred = poisson_rng(lambda * 974); // Predict 2017 interactions
 }
